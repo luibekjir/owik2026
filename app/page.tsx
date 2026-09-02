@@ -90,12 +90,12 @@ function CarouselBg() {
         <div className={styles.track}>
           {row1.map((img, i) => (
             <div key={`r1a-${i}`} className={styles.imageContainer}>
-              <Image src={`/owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" priority={i < 3} />
+              <Image src={`/Owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" priority={i < 3} />
             </div>
           ))}
           {row1.map((img, i) => (
             <div key={`r1b-${i}`} className={styles.imageContainer}>
-              <Image src={`/owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" />
+              <Image src={`/Owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" />
             </div>
           ))}
         </div>
@@ -104,12 +104,12 @@ function CarouselBg() {
         <div className={styles.trackReverse}>
           {row2.map((img, i) => (
             <div key={`r2a-${i}`} className={styles.imageContainer}>
-              <Image src={`/owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" />
+              <Image src={`/Owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" />
             </div>
           ))}
           {row2.map((img, i) => (
             <div key={`r2b-${i}`} className={styles.imageContainer}>
-              <Image src={`/owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" />
+              <Image src={`/Owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" />
             </div>
           ))}
         </div>
@@ -118,12 +118,12 @@ function CarouselBg() {
         <div className={styles.track}>
           {row3.map((img, i) => (
             <div key={`r3a-${i}`} className={styles.imageContainer}>
-              <Image src={`/owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" />
+              <Image src={`/Owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" />
             </div>
           ))}
           {row3.map((img, i) => (
             <div key={`r3b-${i}`} className={styles.imageContainer}>
-              <Image src={`/owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" />
+              <Image src={`/Owik 2026/${img}`} alt="" fill sizes="50vw" className="object-cover" />
             </div>
           ))}
         </div>
