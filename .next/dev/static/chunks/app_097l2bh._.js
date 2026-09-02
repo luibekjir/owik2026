@@ -111,7 +111,7 @@ const row1 = images.slice(0, 8);
 const row2 = images.slice(8, 16);
 const row3 = images.slice(16, 24);
 /* ─── Target Waktu ─────────────────────────────────────────── */ // 3 September 2026, 04:25 WIB
-const TARGET_DATE = new Date("2026-09-03T04:25:00+07:00").getTime();
+const TARGET_DATE = new Date("2026-09-05T00:00:00+07:00").getTime();
 function getTimeLeft() {
     const distance = TARGET_DATE - Date.now();
     if (distance <= 0) return {

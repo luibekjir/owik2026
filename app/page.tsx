@@ -38,7 +38,7 @@ const row3 = images.slice(16, 24);
 
 /* ─── Target Waktu ─────────────────────────────────────────── */
 // 3 September 2026, 04:25 WIB
-const TARGET_DATE = new Date("2026-09-03T04:25:00+07:00").getTime();
+const TARGET_DATE = new Date("2026-09-05T00:00:00+07:00").getTime();
 
 interface TimeLeft {
   days: number;
