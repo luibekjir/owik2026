@@ -1,0 +1,654 @@
+/* ═══════════════════════════════════════════════════════════ */
+/*  CAROUSEL BACKGROUND                                        */
+/* ═══════════════════════════════════════════════════════════ */
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  z-index: 0;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 75s linear infinite;
+}
+
+.trackReverse {
+  display: flex;
+  width: max-content;
+  animation: scrollReverse 75s linear infinite;
+}
+
+.imageContainer {
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollReverse {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Mobile: 3 rows */
+@media (max-width: 768px) {
+  .row { height: 33.3333vh; }
+}
+
+/* Desktop: Hide 3rd row */
+@media (min-width: 769px) {
+  .row3 { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/*  GALLERY OVERLAY & SCROLL WRAPPER                          */
+/* ═══════════════════════════════════════════════════════════ */
+
+/* Fixed overlay on top of carousel */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 50%,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(8, 8, 18, 0.75) 100%),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.1) 35%,
+      rgba(0, 0, 0, 0.1) 65%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Scrollable content sits above fixed overlay */
+.scrollWrapper {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  overflow-y: auto;
+  overscroll-behavior: none;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/*  HERO SECTION                                              */
+/* ═══════════════════════════════════════════════════════════ */
+
+.heroSection {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem 6rem 1.5rem;
+  color: white;
+}
+
+.galleryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 2rem;
+  animation: fadeSlideDown 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.galleryBadgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fbbf24;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.9);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.galleryTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(4.5rem, 14vw, 11rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 0;
+  /* Gradient emas ke putih */
+  background: linear-gradient(
+    150deg,
+    #fff 0%,
+    #f5ead8 25%,
+    #fbbf24 55%,
+    #f5ead8 75%,
+    #fff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 60px rgba(251, 191, 36, 0.25));
+  animation: fadeSlideUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.galleryTitleYear {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(4.5rem, 14vw, 11rem);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 0.88;
+  display: block;
+  background: linear-gradient(
+    150deg,
+    #fff 0%,
+    #fbbf24 50%,
+    #fff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeSlideUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+
+.galleryDivider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+
+.galleryDividerLine {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(251,191,36,0.6));
+}
+
+.galleryDividerLine:last-child {
+  background: linear-gradient(90deg, rgba(251,191,36,0.6), transparent);
+}
+
+.galleryDividerDiamond {
+  width: 6px;
+  height: 6px;
+  border: 1px solid rgba(251, 191, 36, 0.7);
+  transform: rotate(45deg);
+  background: rgba(251, 191, 36, 0.3);
+}
+
+.gallerySubtitle {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  max-width: 34rem;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeIn 1s ease 1.5s both;
+  cursor: pointer;
+}
+
+.scrollIndicatorText {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.scrollIndicatorChevron {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  animation: bounceDown 2s ease-in-out infinite;
+}
+
+.scrollIndicatorChevron span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.3);
+  transform: rotate(45deg);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/*  CONTENT SECTIONS (below hero, scrollable)                 */
+/* ═══════════════════════════════════════════════════════════ */
+
+.contentSection {
+  position: relative;
+  width: 100%;
+  padding: 6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Frosted glass card behind text blocks */
+.glassCard {
+  width: 100%;
+  max-width: 780px;
+  padding: 0 1rem;
+  text-align: left;
+  max-height: 70vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 640px) {
+  .glassCard {
+    padding: 0;
+  }
+}
+
+.sectionLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #fbbf24;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.sectionLabel::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #fbbf24;
+  opacity: 0.6;
+}
+
+.sectionHeading {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.sectionHeading strong {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.sectionText {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+  font-weight: 300;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.sectionText + .sectionText {
+  margin-top: 1.2rem;
+}
+
+/* Divider ornament between sections */
+.ornamentDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 4rem auto;
+  opacity: 0.25;
+}
+
+.ornamentDivider::before,
+.ornamentDivider::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.ornamentStar {
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(255,255,255,0.6);
+  transform: rotate(45deg);
+}
+
+/* Quote / highlight block */
+.quoteBlock {
+  border-left: 2px solid rgba(251, 191, 36, 0.4);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+
+.quoteText {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+/* Footer section */
+.footerSection {
+  padding: 4rem 1.5rem 6rem;
+  text-align: center;
+}
+
+.footerText {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.footerGold {
+  color: rgba(251, 191, 36, 0.45);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/*  COUNTDOWN PAGE                                            */
+/* ═══════════════════════════════════════════════════════════ */
+
+.countdownPage {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 50%, #0f0f1a 0%, #050507 100%);
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+.countdownBg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.countdownBg::before,
+.countdownBg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.07;
+}
+
+.countdownBg::before {
+  width: 700px;
+  height: 700px;
+  background: #6366f1;
+  top: -150px;
+  left: -150px;
+  animation: floatOrb 14s ease-in-out infinite alternate;
+}
+
+.countdownBg::after {
+  width: 600px;
+  height: 600px;
+  background: #f59e0b;
+  bottom: -150px;
+  right: -150px;
+  animation: floatOrb 18s ease-in-out infinite alternate-reverse;
+}
+
+.countdownCard {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 3.5rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.035) inset,
+    0 48px 120px rgba(0,0,0,0.55),
+    0 0 100px rgba(99,102,241,0.05);
+  max-width: 660px;
+  width: 100%;
+  animation: cardEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+@media (max-width: 600px) {
+  .countdownCard { padding: 3rem 1.75rem; border-radius: 1.5rem; }
+}
+
+.countdownLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin-bottom: 1.25rem;
+  animation: fadeSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.countdownTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #f1f5f9;
+  text-align: center;
+  line-height: 1.35;
+  margin-bottom: 3rem;
+  animation: fadeSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+  max-width: 26rem;
+}
+
+.countdownTimerRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 3vw, 1.25rem);
+  animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+}
+
+.countdownUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.countdownNumber {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(2.75rem, 9vw, 5.5rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 0 50px rgba(255,255,255,0.12);
+}
+
+.countdownNumber.ticking {
+  animation: tick 0.18s ease-out;
+}
+
+.countdownUnitLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.countdownColon {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.15);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  animation: colonPulse 1s ease-in-out infinite;
+}
+
+.countdownLine {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent);
+  margin-top: 3rem;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/*  TRANSITION SCREEN                                         */
+/* ═══════════════════════════════════════════════════════════ */
+
+.transitionScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: transitionFadeOut 2.2s cubic-bezier(0.76, 0, 0.24, 1) 0.6s forwards;
+  pointer-events: none;
+}
+
+.transitionText {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2rem, 7vw, 5rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  animation: transitionTextAnim 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/*  KEYFRAMES                                                 */
+/* ═══════════════════════════════════════════════════════════ */
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(45px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes floatOrb {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(50px, 35px) scale(1.12); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.5); opacity: 0.65; }
+}
+
+@keyframes colonPulse {
+  0%, 100% { opacity: 0.15; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes tick {
+  0%   { transform: translateY(-5px); opacity: 0.5; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes transitionFadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes transitionTextAnim {
+  0%   { opacity: 0; letter-spacing: 0.55em; transform: scale(1.06); }
+  20%  { opacity: 1; letter-spacing: 0.2em; transform: scale(1); }
+  75%  { opacity: 1; }
+  100% { opacity: 0; letter-spacing: 0.06em; transform: scale(0.94); }
+}
+
+@keyframes galleryReveal {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+.galleryReveal {
+  animation: galleryReveal 1.8s ease-out 1.2s both;
+}
