@@ -111,7 +111,7 @@ const row1 = images.slice(0, 8);
 const row2 = images.slice(8, 16);
 const row3 = images.slice(16, 24);
 /* ─── Target Waktu ─────────────────────────────────────────── */ // 3 September 2026, 04:25 WIB
-const TARGET_DATE = new Date("2026-09-05T00:00:00+07:00").getTime();
+const TARGET_DATE = new Date("2026-09-05T00:00+07:00").getTime();
 function getTimeLeft() {
     const distance = TARGET_DATE - Date.now();
     if (distance <= 0) return {
@@ -557,17 +557,8 @@ function Home() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Carousel$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].sectionHeading,
-                                children: [
-                                    "Halooo ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                        children: "8 - Mirage"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/page.tsx",
-                                        lineNumber: 230,
-                                        columnNumber: 22
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                                children: "Halooo buat yang baca"
+                            }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
                                 lineNumber: 229,
                                 columnNumber: 13
@@ -577,7 +568,7 @@ function Home() {
                                 style: {
                                     whiteSpace: 'pre-wrap'
                                 },
-                                children: `Congratsss kalian udah berhasil ngelewatin owik!! Gaterasa udah 2 ato 3 bulan kita deket lewat SLDRC. Banyak hal terjadi mulai dr mungkin kalian kurang deket sm anak kalian, anak anaknya kurang ajar sm susah diatur, loading in kurang lancar, selling day hampir ga balik modal, anak anak banyak tanya, atau ada bbrp yang unik, sampe kt pilah sampah yg padahal ga perlu banyak orang kocak. Ini semua itu proses menantang yang bkl bikin kalian bisa lbh mengenal, membantu, ngadepin menti kalian selama setahun kedepan. Jadi jangan pernah merasa bersalah soalnya itu slh satu proses dr kalian bertumbuh. Jadi mentor itu bisa jadi banyak versi. Ada yang friendly, teges, beneran kayak jadi senior dlll buanyak ws, tinggal tergantung kalian mau jadi mentor yg kyk gmn. Semua versi pasti ada plus minusnya tp ak yakin kalian semua udah jadi mentor yang bener sejauh ini. semangat buat perjalanan kalian yang masih ada 1 taun, mungkin bkl ada bosen soalnya emang ga seseru owik tp jgn sampe kalian lost track sm menti2 kalian. Semoga kalian tetep jadi andalan anak anak kalian wktu mereka lagi susah adaptasi di kuliah. \nThankyouu udah bntu ngisi waktu liburku jd menyenangkan dan ga nganggur di rumah. smoga kt ttp deket wlau psti jrg ktemu. see u ol
+                                children: `Congratsss kalian udah berhasil ngelewatin owik!! Gaterasa udah 2 ato 3 bulan kita deket lewat SLDRC, gladi, smpe owik selesai. Banyak hal terjadi mulai dr mungkin kalian kurang deket sm anak kalian, anak anaknya kurang ajar sm susah diatur, loading in kurang lancar, selling day hampir ga balik modal, anak anak banyak tanya, atau ada bbrp yang unik, sampe kt pilah sampah yg padahal ga perlu banyak orang kocak. Ini semua itu proses menantang yang bkl bikin kalian bisa lbh mengenal, membantu, ngadepin menti kalian selama setahun kedepan. Jadi jangan pernah merasa bersalah soalnya itu slh satu proses dr kalian bertumbuh. Jadi mentor itu bisa jadi banyak versi. Ada yang friendly, teges, beneran kayak jadi senior dlll buanyak ws, tinggal tergantung kalian mau jadi mentor yg kyk gmn. Semua versi pasti ada plus minusnya tp ak yakin kalian semua udah jadi mentor yang bener sejauh ini. semangat buat perjalanan kalian yang masih ada 1 taun, mungkin bkl ada bosen soalnya emang ga seseru owik tp jgn sampe kalian lost track sm menti2 kalian. Semoga kalian tetep jadi andalan anak anak kalian wktu mereka lagi susah adaptasi di kuliah. \nThankyouu udah bntu ngisi waktu liburku jd menyenangkan dan ga nganggur di rumah aowkoakw. smoga kt ttp deket wlau psti jrg ktemu. see u ol
 
 -lui anjay keterima apple keren banget wow`
                             }, void 0, false, {

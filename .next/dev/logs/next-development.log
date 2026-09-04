@@ -5,3 +5,18 @@
 {"timestamp":"00:12:34.064","source":"Server","level":"LOG","message":"✓ Compiled in 219ms"}
 {"timestamp":"00:12:37.380","source":"Server","level":"LOG","message":"✓ Compiled in 112ms"}
 {"timestamp":"00:12:40.960","source":"Server","level":"LOG","message":"✓ Compiled in 35ms"}
+{"timestamp":"33:09:51.875","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"33:10:05.990","source":"Server","level":"LOG","message":"✓ Compiled in 94ms"}
+{"timestamp":"33:10:09.393","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"33:10:16.433","source":"Server","level":"LOG","message":"✓ Compiled in 85ms"}
+{"timestamp":"33:10:17.976","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"33:10:26.632","source":"Server","level":"LOG","message":"✓ Compiled in 80ms"}
+{"timestamp":"33:10:29.919","source":"Server","level":"LOG","message":"✓ Compiled in 30ms"}
+{"timestamp":"33:10:34.366","source":"Server","level":"LOG","message":"✓ Compiled in 23ms"}
+{"timestamp":"33:10:37.524","source":"Server","level":"LOG","message":"✓ Compiled in 31ms"}
+{"timestamp":"33:10:39.285","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"33:10:58.469","source":"Server","level":"LOG","message":"✓ Compiled in 91ms"}
+{"timestamp":"33:11:00.633","source":"Server","level":"LOG","message":"✓ Compiled in 35ms"}
+{"timestamp":"33:11:05.428","source":"Server","level":"LOG","message":"✓ Compiled in 91ms"}
+{"timestamp":"33:11:10.599","source":"Server","level":"LOG","message":"✓ Compiled in 112ms"}
+{"timestamp":"33:11:14.798","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
